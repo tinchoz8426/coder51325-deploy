@@ -1,0 +1,19 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Página de creación de estudiante</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h2 class="text-center">Crear estudiante</h2>
+
+<form class="d-flex flex-column align-items-center" method="POST">{% csrf_token %}
+    {{ form.as_p}}
+    <div>
+        <a class="mb-2 btn btn-primary" href="{% url 'estudiantes' %}">Cancelar</a>
+        <input class="mb-2 btn btn-success" type="submit" value="Registrar">
+    </div>
+</form>
+{% endblock %}

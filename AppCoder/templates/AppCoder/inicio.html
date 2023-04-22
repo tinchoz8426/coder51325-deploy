@@ -1,0 +1,41 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+
+{% block titulo %}
+    <h1 class="color-coder">Bienvenidos a la página de Python de Coderhouse!</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1 class="mt-3 text-center">Tenemos disponibles los siguientes cursos</h1>
+<h2 class="text-center">{{ mensaje }}</h2>
+
+<table class="mb-4 table table-striped table-hover">
+    <thead>
+        <tr>
+            
+            <th>Nombre</th>
+            <th>Comisión</th>
+            <th>Fecha de inicio</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for curso in listado_cursos %}
+        <tr>
+            
+            <td>
+                {{ curso.nombre}}
+            </td>
+            <td>
+                {{ curso.comision}}
+            </td>
+            <td>
+                {{ curso.fecha_inicio|date:"d-m-Y"}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

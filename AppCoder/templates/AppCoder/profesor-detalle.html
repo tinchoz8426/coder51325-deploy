@@ -1,0 +1,20 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Datos de Profesor</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<div class="d-flex justify-content-center mt-4">
+<div class="card" style="width: 18rem;">
+    <div class="card-body d-flex flex-column align-items-center">
+      <h5 class="card-title mb-4">Nombre: {{profesor.nombre}} {{profesor.apellido}}</h5>
+      <p class="card-text">Correo electrónico: {{profesor.email}}</p>
+      <p class="card-text">Profesión: {{profesor.profesion}}</p>
+    </div>
+</div>
+</div>
+<a class="btn btn-primary my-4" href="{% url 'profesores' %}">Volver</a>
+{% endblock %}

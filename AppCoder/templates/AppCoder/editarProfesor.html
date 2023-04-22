@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Página de edición de profesor</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h3>{{ mensaje }}</h3>
+<h2 class="text-center">Editar profesor</h2>
+<form class="d-flex flex-column align-items-center" action="{% url 'editarProfesor' profesor.id %}" method="POST"> {% csrf_token %}
+
+    <table>
+    
+        {{ form.as_table }}
+    
+    </table>
+    <div>
+        <a class="btn btn-primary" href="{% url 'profesores' %}">Volver</a>
+        <input class="my-4 btn btn-warning" type="submit" value="Editar">
+    </div>
+
+    </form>
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Página de edición de usuario</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+
+<h3>{{ mensaje }}</h3>
+<h2 class="text-center fw-light">Editar usuario: <span class="fw-bold fst-italic">{{ nombreusuario }}</span></h2>
+
+<form class="d-flex flex-column align-items-center" action="{% url 'editarPerfil'  %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input class="my-2 btn btn-warning" type="submit" value="Editar usuario">
+</form>
+
+
+{% endblock %}
